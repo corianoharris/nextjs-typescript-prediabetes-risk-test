@@ -1,5 +1,39 @@
-export default function Home() {
+import React, {useState, useEffect} from 'react';
 
+
+export default function Home() {
+  const [questionOne, setQuestionOne] = useState<string>(" ");
+  const [questionTwo, setQuestionTwo] = useState<string>(" ");
+  const [questionThree, setQuestionThree] = useState<string>(" ");
+  const [questionFour, setQuestionFour] = useState<string>(" ");
+  const [questionFive, setQuestionFive] = useState<string>(" ");
+  const [questionSix, setQuestionSix] = useState<string>(" ");
+  const [questionSeven, setQuestionSeven] = useState<string>(" ");
+
+  const [points, setPoints] = useState<string[]>([])
+  
+  const redirectToChart = () => {
+    window.location.href = "/chart";
+  }
+
+  useEffect(() => {
+    // storing questions values to local storage
+    const storageValue = (points: string[]) => {
+      points[0] = questionOne;
+      points[1] = questionTwo;
+      points[2] = questionThree;
+      points[3] = questionFour;
+      points[4] = questionFive;
+      points[5] = questionSix;
+      points[6] = questionSeven;
+
+      console.log("points arr: ", points);
+  
+      localStorage.setItem("points", JSON.stringify(points));
+    }
+
+    storageValue(points);
+  }, [points, questionOne, questionTwo, questionThree, questionFour,  questionFive,questionSix, questionSeven ])
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 bg-slate-100">
@@ -12,8 +46,14 @@ export default function Home() {
                 <label className="inline-flex items-center mb-2 font-medium tracking-wide sm:text-sm md:text-md " htmlFor="age">
                   How old are you?
                 </label>
-                <select className="select max-w-xs outline-dashed p-2 rounded" id="age" defaultValue={'default'}>
-                  <option value="default" disabled >select your option</option>
+                <select className="select max-w-xs outline-dashed p-2 rounded" id="age" defaultValue={questionOne} onChange={(
+                  ev: React.ChangeEvent<HTMLSelectElement>,
+                ): void => {
+                  ev.preventDefault();
+                  setQuestionOne(ev.target.value);
+                  points[0] = questionOne;
+                }}>
+                  <option value={questionOne} disabled >select your option</option>
                   <option value={0}>Younger than 40 years</option>
                   <option value={1}>40-49 years</option>
                   <option value={2}>50-59 years</option>
@@ -25,8 +65,13 @@ export default function Home() {
                 <label className="inline-flex items-center mb-2 font-medium tracking-wide sm:text-sm md:text-md " htmlFor="ethnicity">
                   What is your ethnicity?
                 </label>
-                <select className="select max-w-xs outline-dashed p-2 rounded" id="ethnicity" defaultValue={'default'}>
-                <option value="default" disabled >select your option</option>
+                <select className="select max-w-xs outline-dashed p-2 rounded" id="ethnicity" defaultValue={questionTwo} onChange={(
+                  ev: React.ChangeEvent<HTMLSelectElement>,
+                ): void => {
+                  ev.preventDefault();
+                  setQuestionTwo(ev.target.value)
+                }}>
+                <option value={questionTwo} disabled >select your option</option>
                   <option value={0}>White/Caucasian</option>
                   <option value={2}>American Indian/Alaska Native</option>
                   <option value={2}>Alaska Native</option>
@@ -49,6 +94,13 @@ export default function Home() {
                       id="man"
                       type="radio"
                       className="form-radio h-5 w-5 text-yellow-600"
+                      value={1}
+                      onChange={(
+                        ev: React.ChangeEvent<HTMLInputElement>,
+                      ): void => {
+                        ev.preventDefault();
+                        setQuestionThree(ev.target.value)
+                      }}
                     />
                     <span className="ml-2 text-gray-700">man</span>
                   </label>
@@ -57,6 +109,13 @@ export default function Home() {
                       id="woman"
                       type="radio"
                       className="form-radio h-5 w-5 text-yellow-600"
+                      value={0}
+                      onChange={(
+                        ev: React.ChangeEvent<HTMLInputElement>,
+                      ): void => {
+                        ev.preventDefault();
+                        setQuestionThree(ev.target.value)
+                      }}
                     />
                     <span className="ml-2 text-gray-700">woman</span>
                   </label>
@@ -74,6 +133,13 @@ export default function Home() {
                       id="gastational-diabetes-yes"
                       type="radio"
                       className="form-radio h-5 w-5 text-yellow-600"
+                      value={1}
+                      onChange={(
+                        ev: React.ChangeEvent<HTMLInputElement>,
+                      ): void => {
+                        ev.preventDefault();
+                        setQuestionFour(ev.target.value)
+                      }}
                     />
                     <span className="ml-2 text-gray-700">yes</span>
                   </label>
@@ -82,6 +148,13 @@ export default function Home() {
                       id="gastational-diabetes-no"
                       type="radio"
                       className="form-radio h-5 w-5 text-yellow-600"
+                      value={0}
+                      onChange={(
+                        ev: React.ChangeEvent<HTMLInputElement>,
+                      ): void => {
+                        ev.preventDefault();
+                        setQuestionFour(ev.target.value)
+                      }}
                     />
                     <span className="ml-2 text-gray-700">no</span>
                   </label>
@@ -98,6 +171,13 @@ export default function Home() {
                       id="family-yes"
                       type="radio"
                       className="form-radio h-5 w-5 text-yellow-600"
+                      value={1}
+                      onChange={(
+                        ev: React.ChangeEvent<HTMLInputElement>,
+                      ): void => {
+                        ev.preventDefault();
+                        setQuestionFive(ev.target.value)
+                      }}
                     />
                     <span className="ml-2 text-gray-700">yes</span>
                   </label>
@@ -106,6 +186,13 @@ export default function Home() {
                       id="family-no"
                       type="radio"
                       className="form-radio h-5 w-5 text-yellow-600"
+                      value={0}
+                      onChange={(
+                        ev: React.ChangeEvent<HTMLInputElement>,
+                      ): void => {
+                        ev.preventDefault();
+                        setQuestionFive(ev.target.value)
+                      }}
                     />
                     <span className="ml-2 text-gray-700">no</span>
                   </label>
@@ -122,6 +209,13 @@ export default function Home() {
                       id="high-blood-pressure-yes"
                       type="radio"
                       className="form-radio h-5 w-5 text-yellow-600"
+                      value={1}
+                      onChange={(
+                        ev: React.ChangeEvent<HTMLInputElement>,
+                      ): void => {
+                        ev.preventDefault();
+                        setQuestionSix(ev.target.value)
+                      }}
                     />
                     <span className="ml-2 text-gray-700">yes</span>
                   </label>
@@ -130,6 +224,13 @@ export default function Home() {
                       id="high-blood-pressure-no"
                       type="radio"
                       className="form-radio h-5 w-5 text-yellow-600"
+                      value={0}
+                      onChange={(
+                        ev: React.ChangeEvent<HTMLInputElement>,
+                      ): void => {
+                        ev.preventDefault();
+                        setQuestionSix(ev.target.value)
+                      }}
                     />
                     <span className="ml-2 text-gray-700">no</span>
                   </label>
@@ -146,6 +247,13 @@ export default function Home() {
                       id="active-yes"
                       type="radio"
                       className="form-radio h-5 w-5 text-yellow-600"
+                      value={1}
+                      onChange={(
+                        ev: React.ChangeEvent<HTMLInputElement>,
+                      ): void => {
+                        ev.preventDefault();
+                        setQuestionSeven(ev.target.value)
+                      }}
                     />
                     <span className="ml-2 text-gray-700">yes</span>
                   </label>
@@ -154,6 +262,13 @@ export default function Home() {
                       id="active-no"
                       type="radio"
                       className="form-radio h-5 w-5 text-yellow-600"
+                      value={0}
+                      onChange={(
+                        ev: React.ChangeEvent<HTMLInputElement>,
+                      ): void => {
+                        ev.preventDefault();
+                        setQuestionSeven(ev.target.value)
+                      }}
                     />
                     <span className="ml-2 text-gray-700">no</span>
                   </label>
@@ -161,7 +276,7 @@ export default function Home() {
               </div>
             </div>
             <div className=" p-3 text-base font-semibold leading-7 text-right " >
-            <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100">Next &rarr;</button>
+            <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100" onClick={redirectToChart}>Next &rarr;</button>
             </div>
           </div>
         <a className="text-black text-xs text-slate-500 hover:bg-grey-700" target="_blank" href="http://www.cdc.gov/">Centers for Disease Control and Prevention</a>
