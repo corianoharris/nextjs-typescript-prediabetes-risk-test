@@ -1,10 +1,9 @@
 export default function Home() {
 
-  
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-4">
-      <div className="relative bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg p-4">
+    <main className="flex min-h-screen flex-col items-center justify-between p-4 bg-slate-100">
+      <div className="relative bg-white pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg p-4">
         <div className="mx-auto min-w-full min-w-[50%]">
           <h1 className="text-3xl text-black">Prediabetes Risk Test</h1>
           <div className="divide-y divide-gray-300/50">
@@ -13,15 +12,34 @@ export default function Home() {
                 <label className="inline-flex items-center mb-2 font-medium tracking-wide sm:text-sm md:text-md " htmlFor="age">
                   How old are you?
                 </label>
-                <select className="select max-w-xs outline-dashed p-2 rounded" id="age">
-                  <option>Younger than 40 years</option>
-                  <option>40-49 years</option>
-                  <option>50-59 years</option>
-                  <option>60 years or older</option>
+                <select className="select max-w-xs outline-dashed p-2 rounded" id="age" defaultValue={'default'}>
+                  <option value="default" disabled >select your option</option>
+                  <option value={0}>Younger than 40 years</option>
+                  <option value={1}>40-49 years</option>
+                  <option value={2}>50-59 years</option>
+                  <option value={3}>60 years or older</option>
                 </select>
               </div>
+ 
+              <div className="flex flex-col">
+                <label className="inline-flex items-center mb-2 font-medium tracking-wide sm:text-sm md:text-md " htmlFor="ethnicity">
+                  What is your ethnicity?
+                </label>
+                <select className="select max-w-xs outline-dashed p-2 rounded" id="ethnicity" defaultValue={'default'}>
+                <option value="default" disabled >select your option</option>
+                  <option value={0}>White/Caucasian</option>
+                  <option value={2}>American Indian/Alaska Native</option>
+                  <option value={2}>Alaska Native</option>
+                  <option value={3}>Asian American</option>
+                  <option value={2}>African American</option>
+                  <option value={2}>Hispanic/Latino</option>
+                  <option value={2}>Native Hawaiian</option>
+                  <option value={2}>Pacific Islander</option>
+                  <option value={0}>Other</option>
+                </select>
+              </div> 
 
-              <div className="lex flex-col">
+              <div className="flex flex-col">
                 <label className="inline-flex items-center font-medium" htmlFor="gender">
                   Are you a man or woman?
                 </label>
@@ -45,7 +63,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="lex flex-col">
+              <div className="flex flex-col">
                 <label className="inline-flex items-center font-medium" htmlFor="gastational-diabetes">
                   If you are a woman, have you ever been diagnosed with gastational
                   diabetes?
@@ -70,7 +88,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="lex flex-col">
+              <div className="flex flex-col">
                 <label className="inline-flex items-center font-medium" htmlFor="family">
                   Do you have a mother, father, sister, brother, with diabetes?
                 </label>
@@ -94,7 +112,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="lex flex-col">
+              <div className="flex flex-col">
                 <label className="inline-flex items-center font-medium" htmlFor="high-blood-pressure">
                   Have you been diagnosed with high blood pressure?
                 </label>
@@ -118,7 +136,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="lex flex-col">
+              <div className="flex flex-col">
                 <label className="inline-flex items-center font-medium" htmlFor="active">
                   Are you physically active?
                 </label>
@@ -142,10 +160,11 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className=" p-2 text-base font-semibold leading-7  mt-2 text-right" >
+            <div className=" p-3 text-base font-semibold leading-7 text-right " >
             <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100">Next &rarr;</button>
             </div>
           </div>
+        <a className="text-black text-xs text-slate-500 hover:bg-grey-700" target="_blank" href="http://www.cdc.gov/">Centers for Disease Control and Prevention</a>
         </div>
       </div>
     </main>
