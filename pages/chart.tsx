@@ -1,5 +1,31 @@
+import React, {useState,useEffect} from 'react';
+
+
+
+
+
 
 const Chart = () => {
+  const [chartPoint, setChartPoint] = useState<string>(" ");
+
+  const redirectToResults = () => {
+    window.location.href = "/results";
+  }
+
+  useEffect(() => {
+    
+    const addValueToStorage = () => {
+      const data = localStorage.getItem("points");
+      if (data !== null) {
+        let points = JSON.parse(data);
+        points[7] = chartPoint;
+        localStorage.setItem("points", JSON.stringify(points));  
+     }
+    }
+    addValueToStorage();
+  }, [chartPoint])
+
+
   return (
 
     <main className="flex min-h-screen flex-col items-center justify-between p-4 bg-slate-100">
@@ -18,17 +44,17 @@ const Chart = () => {
                 <tbody>
                   <tr className="text-left sm: text-sm/[17px] md:text-md text-center  border border-slate-500 rounded mt-2 mb-2">
                     <td className="p-2 bg-slate-200">{`4'10`}</td>
-                    <td className="p-2  border border-slate-600 rounded">{`<119`}</td>
-                    <td className="p-2  border border-slate-600 rounded">119 - 145</td>
-                    <td className="p-2  border border-slate-600 rounded">146 - 190</td>
-                    <td className="p-2  border border-slate-600 rounded">190+</td>
+                    <td onClick={ (e) => setChartPoint("0")} className="0-point p-2  border border-slate-600 bg-teal-500 opacity-50 transition duration-300 ease-in-out hover:opacity-70 text-black" >{`<119`}</td>
+                    <td onClick={ (e) => setChartPoint("1")} className="1-point p-2  border border-slate-600 rounded">119 - 145</td>
+                    <td onClick={ (e) => setChartPoint("2")} className="2-point p-2  border border-slate-600 rounded">146 - 190</td>
+                    <td onClick={ (e) => setChartPoint("3")} className="3-point p-2  border border-slate-600 rounded">190+</td>
                   </tr>
                   <tr className="text-left sm: text-sm/[17px] md:text-md text-center  border border-slate-500 rounded mt-2 mb-2">
                     <td className="p-2 bg-slate-200">{`4'11`}</td>
-                    <td className="p-2  border border-slate-600 rounded">{`<124`}</td>
-                    <td className="p-2  border border-slate-600 rounded">124 - 147</td>
-                    <td className="p-2  border border-slate-600 rounded">148 - 197</td>
-                    <td className="p-2  border border-slate-600 rounded">190+</td>
+                    <td onClick={ (e) => setChartPoint("0")} className="0-point p-2  border border-slate-600 rounded">{`<124`}</td>
+                    <td onClick={ (e) => setChartPoint("1")} className="1-point p-2  border border-slate-600 rounded">124 - 147</td>
+                    <td onClick={ (e) => setChartPoint("2")} className="2-point p-2  border border-slate-600 rounded">148 - 197</td>
+                    <td onClick={ (e) => setChartPoint("3")} className="3-point p-2  border border-slate-600 rounded">190+</td>
                   </tr>
                   <tr className="text-left sm: text-sm/[17px] md:text-md text-center  border border-slate-500 rounded mt-2 mb-2">
                     <td className="p-2 bg-slate-200">{`4'11`}</td>
@@ -153,7 +179,7 @@ const Chart = () => {
               </table>
             </div>
             <div className=" p-3 text-base font-semibold leading-7 text-right mt-3" >
-              <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100 ">Calculate</button>
+              <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100" onClick={redirectToResults}>Calculate</button>
             </div>
           </div>
           <a className="text-black text-xs text-slate-500 hover:bg-grey-500" target="_blank" href="https://www.cdc.gov/diabetes/prevention/index.html">chart from national diabetes prevention program</a>
