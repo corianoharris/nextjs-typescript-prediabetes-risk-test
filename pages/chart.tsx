@@ -31,7 +31,7 @@ const Chart = () => {
     <main className="flex min-h-screen flex-col items-center justify-between md:p-4 bg-slate-100">
       <div className="relative bg-white px-2 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:min-w-lg sm:rounded-lg md:min-w-[60%] m-auto">
         <div className="mx-auto min-w-full ">
-          <h1 className="text-sm text-indigo-500 mb-5 bg-slate-200 p-2 rounded md:w-96">Please choose your weight according to your height</h1>
+          <h1 className="text-sm text-indigo-500 mb-5 bg-slate-200 p-2 rounded md:w-96">Please select your weight according to your height</h1>
 
           <div className="divide-y divide-gray-300/50">
             <div className="space-y-6 text-base leading-7 text-gray-600 font-thin">
@@ -183,7 +183,7 @@ const Chart = () => {
               <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100" onClick={redirectToResults}>Get Results</button>
             </div>
           </div>
-          <a className="text-black text-xs text-slate-500 hover:bg-grey-500" target="_blank" href="https://www.cdc.gov/diabetes/prevention/index.html">chart from national diabetes prevention program</a>
+          <a className="text-black text-xs text-slate-500 hover:bg-grey-500" target="_blank" href="https://www.cdc.gov/diabetes/prevention/index.html">data from national diabetes prevention program</a>
         </div>
       </div>
     </main>
