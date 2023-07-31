@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-
 export default function Home() {
   const [questionOne, setQuestionOne] = useState<string>(" ");
   const [questionTwo, setQuestionTwo] = useState<string>(" ");
@@ -46,14 +45,14 @@ export default function Home() {
                 <label className="inline-flex items-center mb-2 font-medium tracking-wide sm:text-sm md:text-md " htmlFor="age">
                   How old are you?
                 </label>
-                <select className="select max-w-xs outline-dashed outline-indigo-600 p-2 rounded bg-white" multiple={mulitpleAttr}id="age" defaultValue={questionOne} onChange={(
+                <select className="select max-w-xs outline-dashed outline-indigo-600 p-2 rounded bg-white text-indigo-900 font-normal"  multiple={mulitpleAttr} id="age " defaultValue={questionOne} onChange={(
                   ev: React.ChangeEvent<HTMLSelectElement>,
                 ): void => {
                   ev.preventDefault();
                   setQuestionOne(ev.target.value);
                   points[0] = questionOne;
                 }}>
-                  <option value={questionOne} disabled >select your option</option>
+                  <option value={questionOne} >select your option...</option>
                   <option value={0}>Younger than 40 years</option>
                   <option value={1}>40-49 years</option>
                   <option value={2}>50-59 years</option>
@@ -65,13 +64,13 @@ export default function Home() {
                 <label className="inline-flex items-center mb-2 font-medium tracking-wide sm:text-sm md:text-md " htmlFor="ethnicity">
                   What is your ethnicity?
                 </label>
-                <select className="select max-w-xs outline-dashed outline-indigo-600 p-2 rounded bg-white" multiple={mulitpleAttr} id="ethnicity" defaultValue={questionTwo} onChange={(
+                <select className="select max-w-xs outline-dashed outline-indigo-600 p-2 rounded bg-white text-indigo-900 font-normal" multiple={mulitpleAttr} id="ethnicity" defaultValue={questionTwo} onChange={(
                   ev: React.ChangeEvent<HTMLSelectElement>,
                 ): void => {
                   ev.preventDefault();
                   setQuestionTwo(ev.target.value)
                 }}>
-                  <option value={questionTwo} disabled >select your option</option>
+                  <option value={questionTwo} disabled >select your option...</option>
                   <option value={0}>White/Caucasian</option>
                   <option value={2}>American Indian/Alaska Native</option>
                   <option value={2}>Alaska Native</option>
