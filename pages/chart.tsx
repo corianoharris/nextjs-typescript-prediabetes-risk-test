@@ -32,7 +32,7 @@ const Chart = () => {
       <div className="relative bg-white px-2 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:min-w-lg sm:rounded-lg md:min-w-[60%] m-auto">
         <div className="mx-auto min-w-full ">
           <h1 className="text-xl text-indigo-500 mb-5">Please select your weight based on your height.</h1>
-          <h3 className="visible lg:hidden text-sm text-indigo-400 mb-5 bg-slate-200 p-2 rounded w-40">Scroll &uarr; to get results</h3>
+          <h3 className="visible lg:hidden text-sm text-indigo-400 mb-5 bg-slate-200 p-2 rounded w-64">* Scroll &uarr; to get results</h3>
           <div className="divide-y divide-gray-300/50">
             <div className="space-y-6 text-base leading-7 text-gray-600 font-thin">
               <table className="table-auto min-w-full font-semibold">
