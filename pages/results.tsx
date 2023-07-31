@@ -31,7 +31,6 @@ const Result = () => {
       setIsLoading(false);
       setIsLowRisk(true);
     } else {
-      setIsLoading(true);
       setIsLowRisk(false);
     }
     
@@ -39,7 +38,6 @@ const Result = () => {
       setIsLoading(false);
       setIsModerateRisk(true);
     } else {
-      setIsLoading(true);
       setIsModerateRisk(false);
     }
     
@@ -47,7 +45,6 @@ const Result = () => {
     setIsLoading(false);
     setIsHighRisk(true);
     } else {
-      setIsLoading(true);
      setIsHighRisk(false);
    }
   }, [score])
