@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import Loader from '@/components/loader';
 
 
 const Result = () => {
+  const [isloading, setIsLoading] = useState<boolean>(true);
   const [score, setScore] = useState<number>(0);
   const [isLowRisk, setIsLowRisk] = useState<boolean>(false);
   const [isModerateRisk, setIsModerateRisk] = useState<boolean>(false);
   const [isHighRisk, setIsHighRisk] = useState<boolean>(false);
+  
 
   const clearScore = () => {
     localStorage.clear();
     window.location.href = "/";
   }
+
+  
+
 
   useEffect(() => {
     let points;
@@ -22,20 +28,26 @@ const Result = () => {
     setScore(numbers.reduce((prev: any, curr: any) => prev + curr))
     
     if (score <= 4) {
+      setIsLoading(false);
       setIsLowRisk(true);
     } else {
+      setIsLoading(true);
       setIsLowRisk(false);
     }
     
-    if (score >=5 && score <=6) {
+    if (score >= 5 && score <= 6) {
+      setIsLoading(false);
       setIsModerateRisk(true);
     } else {
+      setIsLoading(true);
       setIsModerateRisk(false);
     }
     
     if (score >= 7) {
-     setIsHighRisk(true);
-   } else {
+    setIsLoading(false);
+    setIsHighRisk(true);
+    } else {
+      setIsLoading(true);
      setIsHighRisk(false);
    }
   }, [score])
@@ -49,6 +61,9 @@ const Result = () => {
           <h1 className="text-xl text-center text-indigo-950 mb-5">{`Your score is ${score} of 11`}</h1>
           <div className="divide-y divide-gray-300/50">
             <div className="space-y-6 text-base leading-7 text-indigo-300">
+              {isloading && (
+                <h3 className="text-md text-indigo-700 font-bold mb-2">Calculating your results...</h3>
+              )}
               {isLowRisk && (
                 <div className="p-6">
                   <h3 className="text-md text-indigo-700 font-bold mb-2">You are low risk for prediabetes.</h3>
