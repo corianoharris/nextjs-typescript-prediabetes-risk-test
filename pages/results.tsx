@@ -15,9 +15,6 @@ const Result = () => {
     window.location.href = "/";
   }
 
-  
-
-
   useEffect(() => {
     let points;
     const data = localStorage.getItem("points");
