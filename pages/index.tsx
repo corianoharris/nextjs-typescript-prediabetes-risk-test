@@ -10,7 +10,7 @@ export default function Home() {
   const [questionSix, setQuestionSix] = useState<string>(" ");
   const [questionSeven, setQuestionSeven] = useState<string>(" ");
 
-  const [points, setPoints] = useState<string[]>([])
+  const [points] = useState<string[]>([])
   
   const redirectToChart = () => {
     window.location.href = "/chart";
@@ -26,9 +26,7 @@ export default function Home() {
       points[4] = questionFive;
       points[5] = questionSix;
       points[6] = questionSeven;
-
-      console.log("points arr: ", points);
-  
+      
       localStorage.setItem("points", JSON.stringify(points));
     }
 
@@ -39,14 +37,14 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-4 bg-slate-100">
       <div className="relative bg-white pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg p-4">
         <div className="mx-auto min-w-full min-w-[50%]">
-          <h1 className="text-3xl text-black">Prediabetes Risk Test</h1>
+          <h1 className="text-3xl text-indigo-500">Prediabetes Risk Test</h1>
           <div className="divide-y divide-gray-300/50">
             <div className="space-y-6 py-8 text-base leading-7 text-gray-600 font-thin">
               <div className="flex flex-col">
                 <label className="inline-flex items-center mb-2 font-medium tracking-wide sm:text-sm md:text-md " htmlFor="age">
                   How old are you?
                 </label>
-                <select className="select max-w-xs outline-dashed p-2 rounded" id="age" defaultValue={questionOne} onChange={(
+                <select className="select max-w-xs outline-dashed outline-indigo-600 p-2 rounded" id="age" defaultValue={questionOne} onChange={(
                   ev: React.ChangeEvent<HTMLSelectElement>,
                 ): void => {
                   ev.preventDefault();
@@ -65,7 +63,7 @@ export default function Home() {
                 <label className="inline-flex items-center mb-2 font-medium tracking-wide sm:text-sm md:text-md " htmlFor="ethnicity">
                   What is your ethnicity?
                 </label>
-                <select className="select max-w-xs outline-dashed p-2 rounded" id="ethnicity" defaultValue={questionTwo} onChange={(
+                <select className="select max-w-xs outline-dashed outline-indigo-600 p-2 rounded" id="ethnicity" defaultValue={questionTwo} onChange={(
                   ev: React.ChangeEvent<HTMLSelectElement>,
                 ): void => {
                   ev.preventDefault();
@@ -93,7 +91,7 @@ export default function Home() {
                     <input
                       id="man"
                       type="radio"
-                      className="form-radio h-5 w-5 text-yellow-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={1}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -108,7 +106,7 @@ export default function Home() {
                     <input
                       id="woman"
                       type="radio"
-                      className="form-radio h-5 w-5 text-yellow-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={0}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -132,7 +130,7 @@ export default function Home() {
                     <input
                       id="gastational-diabetes-yes"
                       type="radio"
-                      className="form-radio h-5 w-5 text-yellow-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={1}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -147,7 +145,7 @@ export default function Home() {
                     <input
                       id="gastational-diabetes-no"
                       type="radio"
-                      className="form-radio h-5 w-5 text-yellow-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={0}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -170,7 +168,7 @@ export default function Home() {
                     <input
                       id="family-yes"
                       type="radio"
-                      className="form-radio h-5 w-5 text-yellow-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={1}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -185,7 +183,7 @@ export default function Home() {
                     <input
                       id="family-no"
                       type="radio"
-                      className="form-radio h-5 w-5 text-yellow-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={0}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -208,7 +206,7 @@ export default function Home() {
                     <input
                       id="high-blood-pressure-yes"
                       type="radio"
-                      className="form-radio h-5 w-5 text-yellow-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={1}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -223,7 +221,7 @@ export default function Home() {
                     <input
                       id="high-blood-pressure-no"
                       type="radio"
-                      className="form-radio h-5 w-5 text-yellow-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={0}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -246,7 +244,7 @@ export default function Home() {
                     <input
                       id="active-yes"
                       type="radio"
-                      className="form-radio h-5 w-5 text-yellow-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={1}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -261,7 +259,7 @@ export default function Home() {
                     <input
                       id="active-no"
                       type="radio"
-                      className="form-radio h-5 w-5 text-yellow-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={0}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
