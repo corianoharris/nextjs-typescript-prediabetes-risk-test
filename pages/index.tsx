@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
   const [questionSeven, setQuestionSeven] = useState<string>(" ");
 
   const [points] = useState<string[]>([])
-  
+
   const redirectToChart = () => {
     window.location.href = "/chart";
   }
@@ -26,12 +26,12 @@ export default function Home() {
       points[4] = questionFive;
       points[5] = questionSix;
       points[6] = questionSeven;
-      
+
       localStorage.setItem("points", JSON.stringify(points));
     }
 
     storageValue(points);
-  }, [points, questionOne, questionTwo, questionThree, questionFour,  questionFive,questionSix, questionSeven ])
+  }, [points, questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven])
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 bg-slate-100">
@@ -44,7 +44,7 @@ export default function Home() {
                 <label className="inline-flex items-center mb-2 font-medium tracking-wide sm:text-sm md:text-md " htmlFor="age">
                   How old are you?
                 </label>
-                <select className="select max-w-xs outline-dashed outline-indigo-600 p-2 rounded" id="age" defaultValue={questionOne} onChange={(
+                <select className="select max-w-xs outline-dashed outline-indigo-600 p-2 rounded appearance-none" id="age" defaultValue={questionOne} onChange={(
                   ev: React.ChangeEvent<HTMLSelectElement>,
                 ): void => {
                   ev.preventDefault();
@@ -58,18 +58,18 @@ export default function Home() {
                   <option value={3}>60 years or older</option>
                 </select>
               </div>
- 
+
               <div className="flex flex-col">
                 <label className="inline-flex items-center mb-2 font-medium tracking-wide sm:text-sm md:text-md " htmlFor="ethnicity">
                   What is your ethnicity?
                 </label>
-                <select className="select max-w-xs outline-dashed outline-indigo-600 p-2 rounded" id="ethnicity" defaultValue={questionTwo} onChange={(
+                <select className="select max-w-xs outline-dashed outline-indigo-600 p-2 rounded appearance-none" id="ethnicity" defaultValue={questionTwo} onChange={(
                   ev: React.ChangeEvent<HTMLSelectElement>,
                 ): void => {
                   ev.preventDefault();
                   setQuestionTwo(ev.target.value)
                 }}>
-                <option value={questionTwo} disabled >select your option</option>
+                  <option value={questionTwo} disabled >select your option</option>
                   <option value={0}>White/Caucasian</option>
                   <option value={2}>American Indian/Alaska Native</option>
                   <option value={2}>Alaska Native</option>
@@ -80,7 +80,7 @@ export default function Home() {
                   <option value={2}>Pacific Islander</option>
                   <option value={0}>Other</option>
                 </select>
-              </div> 
+              </div>
 
               <div className="flex flex-col">
                 <label className="inline-flex items-center font-medium" htmlFor="gender">
@@ -96,7 +96,6 @@ export default function Home() {
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
                       ): void => {
-                        ev.preventDefault();
                         setQuestionThree(ev.target.value)
                       }}
                     />
@@ -111,7 +110,6 @@ export default function Home() {
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
                       ): void => {
-                        ev.preventDefault();
                         setQuestionThree(ev.target.value)
                       }}
                     />
@@ -135,7 +133,6 @@ export default function Home() {
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
                       ): void => {
-                        ev.preventDefault();
                         setQuestionFour(ev.target.value)
                       }}
                     />
@@ -150,7 +147,6 @@ export default function Home() {
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
                       ): void => {
-                        ev.preventDefault();
                         setQuestionFour(ev.target.value)
                       }}
                     />
@@ -173,7 +169,6 @@ export default function Home() {
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
                       ): void => {
-                        ev.preventDefault();
                         setQuestionFive(ev.target.value)
                       }}
                     />
@@ -188,7 +183,6 @@ export default function Home() {
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
                       ): void => {
-                        ev.preventDefault();
                         setQuestionFive(ev.target.value)
                       }}
                     />
@@ -211,7 +205,6 @@ export default function Home() {
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
                       ): void => {
-                        ev.preventDefault();
                         setQuestionSix(ev.target.value)
                       }}
                     />
@@ -226,7 +219,6 @@ export default function Home() {
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
                       ): void => {
-                        ev.preventDefault();
                         setQuestionSix(ev.target.value)
                       }}
                     />
@@ -249,7 +241,6 @@ export default function Home() {
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
                       ): void => {
-                        ev.preventDefault();
                         setQuestionSeven(ev.target.value)
                       }}
                     />
@@ -264,7 +255,6 @@ export default function Home() {
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
                       ): void => {
-                        ev.preventDefault();
                         setQuestionSeven(ev.target.value)
                       }}
                     />
@@ -274,10 +264,10 @@ export default function Home() {
               </div>
             </div>
             <div className=" p-3 text-base font-semibold leading-7 text-right " >
-            <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100" onClick={redirectToChart}>Next &rarr;</button>
+              <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100" onClick={redirectToChart}>Next &rarr;</button>
             </div>
           </div>
-        <a className="text-black text-xs text-slate-500 hover:bg-grey-700" target="_blank" href="http://www.cdc.gov/">Centers for Disease Control and Prevention</a>
+          <a className="text-black text-xs text-slate-500 hover:bg-grey-700" target="_blank" href="http://www.cdc.gov/">Centers for Disease Control and Prevention</a>
         </div>
       </div>
     </main>
