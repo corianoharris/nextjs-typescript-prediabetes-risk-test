@@ -1,4 +1,230 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Title
+
+Prediabetes Risk Test 
+
+## Description
+
+An application for assessing prediabetes risk that utilizes data from the [Center for Disease Control](https://www.cdc.gov/), [American Diabetes Association](https://diabetes.org/), and [National Diabetes Prevention Program](https://www.cdc.gov/diabetes/prevention/index.html). 
+
+- [Project Title](#project-title)
+  - [Description](#description)
+  - [Hosted](#hosted)
+  - [Tech Stack](#tech-stack)
+    - [Client-side](#client-side)
+    - [Sever-side](#sever-side)
+    - [Testing](#testing)
+  - [UX Research](#ux-research)
+  - [UI Design](#ui-design)
+  - [Trello](#trello)
+  - [Features](#features)
+  - [A11y](#a11y)
+    - [AXE audit results](#axe-audit-results)
+  - [Lessons Learned](#lessons-learned)
+  - [Roadmap](#roadmap)
+  - [Color Reference](#color-reference)
+  - [Environment Variables](#environment-variables)
+  - [API Reference](#api-reference)
+  - [Globals](#globals)
+  - [Getting Started](#getting-started)
+  - [Acknowledgements](#acknowledgements)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+## Hosted
+
+- Netlify
+
+## Tech Stack
+
+### Client-side
+
+- Next.js, React.js
+
+### Sever-side
+
+- List of sever-side applications
+
+### Testing
+
+- List of testing applications
+
+## UX Research
+
+- ### Problem
+
+- Current Prediabetes web application and not  aesthetically pleasing and user-friendly for assessing prediabetes risk.
+
+- ### Solution
+
+- Create an aesthetically pleasing and user-friendly app for assessing prediabetes risk.
+
+## UI Design
+
+- ### Mockups
+
+![UI Mockups](https://via.placeholder.com/200x200?text=App+Screenshot+Here)
+
+- ### Prototype
+
+![UI Prototype](https://via.placeholder.com/200x200?text=App+Screenshot+Here)
+
+- ### Testing
+
+Live application testing
+
+- #### Users
+
+2
+
+## Trello
+
+![Trello Board](https://via.placeholder.com/200x200?text=App+Screenshot+Here)
+
+## Features
+
+- a form
+- a clickable chart
+
+## A11y
+
+- List of tools used
+
+### AXE audit results
+
+![Axe audit](https://via.placeholder.com/200x200?text=App+Screenshot+Here)
+
+## Lessons Learned
+
+Provide a brief description of what you learned from the project.
+
+## Roadmap
+
+Include a brief description of the next phrase of project.
+
+## Color Reference
+
+| Color         | Hex                                                              |
+| ------------- | ---------------------------------------------------------------- |
+| Example Color | ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) #0a192f |
+| Example Color | ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+) #f8f8f8 |
+| Example Color | ![#00b48a](https://via.placeholder.com/10/00b48a?text=+) #00b48a |
+| Example Color | ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+) #00d1a0 |
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`API_KEY`
+
+`ANOTHER_API_KEY`
+
+## API Reference
+
+- #### Swagger
+
+![Api gui](https://via.placeholder.com/200x200?text=App+Screenshot+Here)
+
+- #### Get all items
+
+```http
+  GET /api/items
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
+
+- #### Get item
+
+```http
+  GET /api/items/${id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch |
+
+- #### Post all items
+
+```http
+  POST /api/items
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
+
+- #### Post item
+
+```http
+  POST /api/items/${id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch |
+
+- #### PUT item
+
+```http
+  PUT /api/items/${id}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
+
+- #### Delete all items
+
+```http
+  DELETE /api/items
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
+
+- #### Delete item
+
+```http
+  DELETE /api/items/${id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch |
+
+## Globals
+
+- ### Variables
+
+```
+identifier
+```
+
+| Required | Property | Key     | Type     | Description |
+| :------- | :------- | :------ | :------- | :---------- |
+| `true`   | `name`   | `value` | `string` |             |
+
+- ### Arrays
+
+```
+identifier
+```
+
+Array.length value:
+
+| index    | Key     | Type     | Description |
+| :------- | :------ | :------- | :---------- |
+| `number` | `value` | `string` |             |
+
+- ### Functions
+
+Number of arguments:
+
+| Parameter | Type     | Return              | Description |
+| :-------- | :------- | :------------------ | :---------- |
+| `name`    | `string` | **Required**. value |             |
 
 ## Getting Started
 
@@ -14,25 +240,5 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Acknowledgements
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
