@@ -10,6 +10,8 @@ export default function Home() {
   const [questionSix, setQuestionSix] = useState<string>(" ");
   const [questionSeven, setQuestionSeven] = useState<string>(" ");
 
+  const mulitpleAttr: boolean = false;
+
   const [points] = useState<string[]>([])
 
   const redirectToChart = () => {
@@ -44,7 +46,7 @@ export default function Home() {
                 <label className="inline-flex items-center mb-2 font-medium tracking-wide sm:text-sm md:text-md " htmlFor="age">
                   How old are you?
                 </label>
-                <select className="select max-w-xs outline-dashed outline-indigo-600 p-2 rounded appearance-none" id="age" defaultValue={questionOne} onChange={(
+                <select className="select max-w-xs outline-dashed outline-indigo-600 p-2 rounded bg-white" multiple={mulitpleAttr}id="age" defaultValue={questionOne} onChange={(
                   ev: React.ChangeEvent<HTMLSelectElement>,
                 ): void => {
                   ev.preventDefault();
@@ -63,7 +65,7 @@ export default function Home() {
                 <label className="inline-flex items-center mb-2 font-medium tracking-wide sm:text-sm md:text-md " htmlFor="ethnicity">
                   What is your ethnicity?
                 </label>
-                <select className="select max-w-xs outline-dashed outline-indigo-600 p-2 rounded appearance-none" id="ethnicity" defaultValue={questionTwo} onChange={(
+                <select className="select max-w-xs outline-dashed outline-indigo-600 p-2 rounded bg-white" multiple={mulitpleAttr} id="ethnicity" defaultValue={questionTwo} onChange={(
                   ev: React.ChangeEvent<HTMLSelectElement>,
                 ): void => {
                   ev.preventDefault();
@@ -91,7 +93,8 @@ export default function Home() {
                     <input
                       id="man"
                       type="radio"
-                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
+                      name="gender"
+                      className="form-radio h-5 w-5 accent-indigo-400"
                       value={1}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -105,7 +108,8 @@ export default function Home() {
                     <input
                       id="woman"
                       type="radio"
-                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
+                      name="gender"
+                      className="form-radio h-5 w-5 accent-indigo-400"
                       value={0}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -128,6 +132,7 @@ export default function Home() {
                     <input
                       id="gastational-diabetes-yes"
                       type="radio"
+                      name="gastational"
                       className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={1}
                       onChange={(
@@ -142,6 +147,7 @@ export default function Home() {
                     <input
                       id="gastational-diabetes-no"
                       type="radio"
+                      name="gastational"
                       className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={0}
                       onChange={(
@@ -164,6 +170,7 @@ export default function Home() {
                     <input
                       id="family-yes"
                       type="radio"
+                      name="family"
                       className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={1}
                       onChange={(
@@ -178,6 +185,7 @@ export default function Home() {
                     <input
                       id="family-no"
                       type="radio"
+                      name="family"
                       className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={0}
                       onChange={(
@@ -200,6 +208,7 @@ export default function Home() {
                     <input
                       id="high-blood-pressure-yes"
                       type="radio"
+                      name="blood-pressure"
                       className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={1}
                       onChange={(
@@ -214,6 +223,7 @@ export default function Home() {
                     <input
                       id="high-blood-pressure-no"
                       type="radio"
+                      name="blood-pressure"
                       className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={0}
                       onChange={(
@@ -236,6 +246,7 @@ export default function Home() {
                     <input
                       id="active-yes"
                       type="radio"
+                      name="active"
                       className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={1}
                       onChange={(
@@ -250,6 +261,7 @@ export default function Home() {
                     <input
                       id="active-no"
                       type="radio"
+                      name="active"
                       className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
                       value={0}
                       onChange={(
