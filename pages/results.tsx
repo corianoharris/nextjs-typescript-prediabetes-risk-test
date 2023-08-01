@@ -90,6 +90,9 @@ const Result = () => {
                 </div>
               )}
             </div>
+            <div className=" p-3 text-base font-semibold leading-7 text-left " >
+            <p className="text-md mt-2 text-indigo-400 font-medium bg-slate-200 p-2 rounded">If you African American, Hispanic/Latino American, American Indian/Alaska Native, or Pacific Islander, you are at a higher risk for prediabetes and type 2 diabetes. Also if you are Aisan American, you are at increased risk for type 2 diabetes at a lower weight (about 15 pounds lower than weight in first weight column). Talk to your doctor to see if you should have your blood sugar tested.</p>
+            </div>
             <div className=" p-3 text-base font-semibold leading-7 text-right " >
               <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100 tracking-wider" onClick={clearScore}>&larr; Retake Test</button>
             </div>
