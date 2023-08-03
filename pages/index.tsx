@@ -93,7 +93,7 @@ export default function Home() {
                       id="man"
                       type="radio"
                       name="gender"
-                      className="form-radio h-5 w-5 accent-indigo-400"
+                      className="form-radio h-5 w-5 accent-indigo-400 checked:accent-indigo-600"
                       value={1}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -108,7 +108,7 @@ export default function Home() {
                       id="woman"
                       type="radio"
                       name="gender"
-                      className="form-radio h-5 w-5 accent-indigo-400"
+                      className="form-radio h-5 w-5 accent-indigo-400 checked:accent-indigo-600"
                       value={0}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -132,7 +132,7 @@ export default function Home() {
                       id="gastational-diabetes-yes"
                       type="radio"
                       name="gastational"
-                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 checked:accent-indigo-600"
                       value={1}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -147,7 +147,7 @@ export default function Home() {
                       id="gastational-diabetes-no"
                       type="radio"
                       name="gastational"
-                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 checked:accent-indigo-600"
                       value={0}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -170,7 +170,7 @@ export default function Home() {
                       id="family-yes"
                       type="radio"
                       name="family"
-                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 checked:accent-indigo-600"
                       value={1}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -185,7 +185,7 @@ export default function Home() {
                       id="family-no"
                       type="radio"
                       name="family"
-                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 checked:accent-indigo-600"
                       value={0}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -208,7 +208,7 @@ export default function Home() {
                       id="high-blood-pressure-yes"
                       type="radio"
                       name="blood-pressure"
-                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 checked:accent-indigo-600"
                       value={1}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -223,7 +223,7 @@ export default function Home() {
                       id="high-blood-pressure-no"
                       type="radio"
                       name="blood-pressure"
-                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 checked:accent-indigo-600"
                       value={0}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -246,7 +246,7 @@ export default function Home() {
                       id="active-yes"
                       type="radio"
                       name="active"
-                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 checked:accent-indigo-600"
                       value={1}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -261,7 +261,7 @@ export default function Home() {
                       id="active-no"
                       type="radio"
                       name="active"
-                      className="form-radio h-5 w-5 accent-indigo-400 focus:accent-indigo-600"
+                      className="form-radio h-5 w-5 accent-indigo-400 checked:accent-indigo-600"
                       value={0}
                       onChange={(
                         ev: React.ChangeEvent<HTMLInputElement>,
@@ -278,7 +278,7 @@ export default function Home() {
               <button className="h-10 px-5 text-indigo-700 transition-colors duration-150 border border-indigo-500 rounded-lg focus:shadow-outline hover:bg-indigo-500 hover:text-indigo-100" onClick={redirectToChart}>Next &rarr;</button>
             </div>
           </div>
-          <a className="text-black text-xs text-slate-500 hover:bg-grey-700" target="_blank" href="http://www.cdc.gov/">Centers for Disease Control and Prevention</a>
+          <a className="text-black text-xs text-slate-900 hover:text-slate-500 underline underline-offset-4" target="_blank" href="http://www.cdc.gov/">Centers for Disease Control and Prevention</a>
         </div>
       </div>
     </main>
