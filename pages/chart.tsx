@@ -8,6 +8,7 @@ import React, { useState, useEffect, useRef } from 'react';
 const Chart = () => {
   const [chartPoint, setChartPoint] = useState<string>(" ");
   const [isDisabled, setIsDisabled] = useState<boolean>(true);
+  const [isErrorMessage, setIsErrorMessage] = useState<boolean>(false);
 
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -32,6 +33,7 @@ useEffect(() => {
 
   if (chartPoint !== " ") {
     setIsDisabled(false);
+    setIsErrorMessage(false);
     buttonRef?.current?.classList.remove("disabled");
     buttonRef?.current?.classList.remove("cursor-not-allowed");
     buttonRef?.current?.classList.add("hover:bg-indigo-500");
@@ -39,6 +41,7 @@ useEffect(() => {
 
   } else {
     setIsDisabled(true);
+    setIsErrorMessage(true);
     buttonRef?.current?.classList.add("disabled");
     buttonRef?.current?.classList.add("cursor-not-allowed");
     buttonRef?.current?.classList.remove("hover:bg-indigo-500");
@@ -68,8 +71,14 @@ return (
         </div>
         <h1 className="text-sm text-indigo-500 mb-5 bg-slate-200 p-2 rounded md:w-96 shadow-xl">Please select your weight according to your height</h1>
 
+
         <div className="divide-y divide-gray-300/50">
           <div className="space-y-6 text-base leading-7 text-gray-600 font-thin">
+          {isErrorMessage ? (
+              <h5>Please select your weight to enable button</h5>
+            ) : null
+
+            }
             <table className="table-auto min-w-full font-semibold">
               <thead>
                 <tr className="text-indigo-950">

@@ -11,6 +11,7 @@ export default function Home() {
   const [points] = useState<string[]>([])
 
   const [isDisabled, setIsDisabled] = useState<boolean>(true);
+  const [isErrorMessage, setIsErrorMessage] = useState<boolean>(false);
 
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -27,6 +28,7 @@ export default function Home() {
   useEffect(() => {
     if ((questionOne !== " " && questionTwo !== " " && questionThree !== " " && questionFour !== " " && questionFive !== " " && questionSix !== " " && questionSeven !== " ")) {
       setIsDisabled(false);
+      setIsErrorMessage(false);
       buttonRef?.current?.classList.remove("disabled");
       buttonRef?.current?.classList.remove("cursor-not-allowed");
       buttonRef?.current?.classList.add("hover:bg-indigo-500");
@@ -34,11 +36,16 @@ export default function Home() {
 
     } else {
       setIsDisabled(true);
+      setIsErrorMessage(true);
       buttonRef?.current?.classList.add("disabled");
       buttonRef?.current?.classList.add("cursor-not-allowed");
       buttonRef?.current?.classList.remove("hover:bg-indigo-500");
       buttonRef?.current?.classList.remove("hover:text-indigo-100");
     }
+
+    // if (buttonRef?.current?.disabled) {
+    //   setIsErrorMessage(true);
+    // } else setIsErrorMessage(false);
 
 
     // storing questions values to local storage
@@ -55,7 +62,7 @@ export default function Home() {
     }
 
     storageValue(points);
-  }, [points, questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven])
+  }, [points, questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven, buttonRef])
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 bg-slate-100">
@@ -64,6 +71,11 @@ export default function Home() {
           <h1 className="text-3xl text-indigo-500">Prediabetes Risk Test</h1>
           <div className="divide-y divide-gray-300/50">
             <div className="space-y-6 py-8 text-base leading-7 text-gray-600 font-thin">
+            {isErrorMessage ? (
+              <h5>Please answer all questions to enable button</h5>
+            ) : null
+
+            }
               <div className="flex flex-col">
                 <label className="inline-flex items-center mb-2 font-medium tracking-wide sm:text-sm md:text-md " htmlFor="age">
                   How old are you?
