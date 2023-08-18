@@ -64,7 +64,7 @@ useEffect(() => {
 return (
 
   <main className="flex min-h-screen flex-col items-center justify-between md:p-4 bg-slate-100">
-    <div className="relative bg-white px-2 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:min-w-lg sm:rounded-lg md:min-w-[60%] m-auto">
+    <div className="relative bg-white px-2 pt-20 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:min-w-lg sm:rounded-lg md:min-w-[60%] m-auto">
       <div className="mx-auto min-w-full ">
         <div className='text-right text-md font-semibold mb-4'>
           <a className="text-black text-xs text-center text-slate-900 hover:text-slate-500 underline underline-offset-4 tracking-wider" target="_self" href="./"> &larr; Back to form</a>

@@ -66,7 +66,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 bg-slate-100">
-      <div className="relative bg-white pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg p-4">
+      <div className="relative bg-white pt-20 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg p-4">
         <div className="mx-auto min-w-full min-w-[50%]">
           <h1 className="text-3xl text-indigo-500">Prediabetes Risk Test</h1>
           <div className="divide-y divide-gray-300/50">
