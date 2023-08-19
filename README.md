@@ -9,9 +9,8 @@ An application for assessing prediabetes risk that utilizes data from the [Cente
 - [Project Title](#project-title)
   - [Description](#description)
   - [Hosted](#hosted)
-  - [Tech Stack](#tech-stack)
-    - [Client-side](#client-side)
-    - [Sever-side](#sever-side)
+    - [Client-side tech](#client-side-tech)
+    - [Sever-side tech](#sever-side-tech)
     - [Testing](#testing)
   - [UX Research](#ux-research)
   - [UI Design](#ui-design)
@@ -34,13 +33,11 @@ An application for assessing prediabetes risk that utilizes data from the [Cente
 
 - Netlify
 
-## Tech Stack
+### Client-side tech
 
-### Client-side
+- Next.js, React.js, Tailwind, TypeScript
 
-- Next.js, React.js
-
-### Sever-side
+### Sever-side tech
 
 - List of sever-side applications
 
@@ -78,7 +75,7 @@ Live application testing
 
 ## Trello
 
-![Trello Board](https://via.placeholder.com/200x200?text=App+Screenshot+Here)
+![Trello Board](https://via.placeholder.com/200x200?text=App+Screenshot+Here):
 
 ## Features
 
@@ -87,7 +84,7 @@ Live application testing
 
 ## A11y
 
-- List of tools used
+- Lighthouse, AXE Scan
 
 ### AXE audit results
 
@@ -95,20 +92,19 @@ Live application testing
 
 ## Lessons Learned
 
-Provide a brief description of what you learned from the project.
+I learn to utilizes Next.js with Typescript and Tailwind for styling.  
 
 ## Roadmap
 
-Include a brief description of the next phrase of project.
+The next phrase would consist of adding unit and end-to-end testings.
 
 ## Color Reference
 
 | Color         | Hex                                                              |
 | ------------- | ---------------------------------------------------------------- |
-| Example Color | ![#0a192f](https://via.placeholder.com/10/0a192f?text=+) #0a192f |
-| Example Color | ![#f8f8f8](https://via.placeholder.com/10/f8f8f8?text=+) #f8f8f8 |
-| Example Color | ![#00b48a](https://via.placeholder.com/10/00b48a?text=+) #00b48a |
-| Example Color | ![#00d1a0](https://via.placeholder.com/10/00b48a?text=+) #00d1a0 |
+| Paragrpah Text Color | text-indigo-300 |
+| Header Text Color | text-indigo-700 |
+| Background Color 1 | bg-slate-200 |
 
 ## Environment Variables
 
@@ -219,12 +215,13 @@ Array.length value:
 | `number` | `value` | `string` |             |
 
 - ### Functions
+addValueToStorage
 
-Number of arguments:
+| Parameter           | Type               | Return                | Description |
+| :--------           | :-------           | :------------------   | :---------- |
+| `data`              | `string | null`    |  string value         |  adding a string value to points variable in localstorage |
 
-| Parameter | Type     | Return              | Description |
-| :-------- | :------- | :------------------ | :---------- |
-| `name`    | `string` | **Required**. value |             |
+
 
 ## Getting Started
 
