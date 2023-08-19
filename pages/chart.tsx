@@ -50,7 +50,7 @@ useEffect(() => {
 
 
   const addValueToStorage = () => {
-    const data = localStorage.getItem("points");
+    const data: string | null = localStorage.getItem("points");
     if (data !== null) {
       let points = JSON.parse(data);
       points[7] = chartPoint;
