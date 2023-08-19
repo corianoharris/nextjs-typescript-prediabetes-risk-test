@@ -69,21 +69,21 @@ return (
         <div className='text-right text-md font-semibold mb-4'>
           <a className="text-black text-xs text-center text-slate-900 hover:text-slate-500 underline underline-offset-4 tracking-wider" target="_self" href="./"> &larr; Back to form</a>
         </div>
-        <h1 className="text-sm text-indigo-500 mb-5 bg-slate-200 p-2 rounded md:w-96 shadow-xl">Please select your weight according to your height</h1>
+        <h1 className="text-sm text-indigo-500 mb-5 bg-slate-200 p-2 rounded md:w-96 shadow-xl" tabIndex={0}>Please select your weight according to your height</h1>
 
 
         <div className="divide-y divide-gray-300/50">
           <div className="space-y-6 text-base leading-7 text-gray-600 font-thin">
           {isErrorMessage ? (
-              <h5>Please select your weight to enable button</h5>
+              <h5 tabIndex={0}>Please select your weight to enable button</h5>
             ) : null
 
             }
-            <table className="table-auto min-w-full font-semibold">
+            <table className="table-auto min-w-full font-semibold" tabIndex={0}>
               <thead>
                 <tr className="text-indigo-950">
-                  <th colSpan={1} >Height</th>
-                  <th colSpan={4} className="text-center p-2">Weight (lbs)</th>
+                  <th colSpan={1} tabIndex={0}>Height</th>
+                  <th colSpan={4} className="text-center p-2" tabIndex={0}> Weight (lbs)</th>
                 </tr>
               </thead>
               <tbody>
