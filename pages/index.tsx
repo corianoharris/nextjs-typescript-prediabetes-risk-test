@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-export default function Home() {
+const Home = () => {
   const [questionOne, setQuestionOne] = useState<string>(" ");
   const [questionTwo, setQuestionTwo] = useState<string>(" ");
   const [questionThree, setQuestionThree] = useState<string>(" ");
@@ -16,8 +16,6 @@ export default function Home() {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const mulitpleAttr: boolean = false;
-
-  console.log(" question one", questionOne)
 
   const redirectToChart = () => {
     window.location.href = "/chart";
@@ -68,16 +66,16 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-4 bg-slate-100">
       <div className="relative bg-white pt-20 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:rounded-lg p-4">
         <div className="mx-auto min-w-full min-w-[50%]">
-          <h1 className="text-3xl text-indigo-500">Prediabetes Risk Test</h1>
+          <h1 className="text-3xl text-indigo-500" role='heading' tabIndex={0}>Prediabetes Risk Test</h1>
           <div className="divide-y divide-gray-300/50">
             <div className="space-y-6 py-8 text-base leading-7 text-gray-600 font-thin">
             {isErrorMessage ? (
-              <h5>Please answer all questions to enable button</h5>
+              <h5 role='heading' tabIndex={0} >Please answer all questions to enable button</h5>
             ) : null
 
             }
               <div className="flex flex-col">
-                <label className="inline-flex items-center mb-2 font-medium tracking-wide sm:text-sm md:text-md " htmlFor="age">
+                <label className="inline-flex items-center mb-2 font-medium tracking-wide sm:text-sm md:text-md" htmlFor="age" tabIndex={0} aria-label='How old are you?'>
                   How old are you?
                 </label>
                 <select className="select max-w-xs outline-dashed outline-indigo-600 p-2 rounded bg-white text-indigo-900 font-normal" multiple={mulitpleAttr} id="age " defaultValue={questionOne} onChange={(
@@ -96,7 +94,7 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col">
-                <label className="inline-flex items-center mb-2 font-medium tracking-wide sm:text-sm md:text-md " htmlFor="ethnicity">
+                <label className="inline-flex items-center mb-2 font-medium tracking-wide sm:text-sm md:text-md" htmlFor="ethnicity" tabIndex={0} aria-label='What is your ethnicity?'>
                   What is your ethnicity?
                 </label>
                 <select className="select max-w-xs outline-dashed outline-indigo-600 p-2 rounded bg-white text-indigo-900 font-normal" multiple={mulitpleAttr} id="ethnicity" defaultValue={questionTwo} onChange={(
@@ -119,11 +117,11 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col">
-                <label className="inline-flex items-center font-medium" htmlFor="gender">
+                <label className="inline-flex items-center font-medium" htmlFor="gender" tabIndex={0} aria-label='Are you a man or woman?'>
                   Are you a man or woman?
                 </label>
                 <div className="flex-col space-x-4">
-                  <label className="inline-flex items-center" htmlFor="man">
+                  <label className="inline-flex items-center" htmlFor="man" aria-label='man' >
                     <input
                       id="man"
                       type="radio"
@@ -138,7 +136,7 @@ export default function Home() {
                     />
                     <span className="ml-2 text-gray-700">man</span>
                   </label>
-                  <label className="inline-flex items-center mt-3" htmlFor="woman">
+                  <label className="inline-flex items-center mt-3" htmlFor="woman" aria-label='woman'>
                     <input
                       id="woman"
                       type="radio"
@@ -157,12 +155,13 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col">
-                <label className="inline-flex items-center font-medium" htmlFor="gastational-diabetes">
+                <label className="inline-flex items-center font-medium" htmlFor="gastational-diabetes" tabIndex={0} aria-label='If you are a woman, have you ever been diagnosed with gastational
+                  diabetes?'>
                   If you are a woman, have you ever been diagnosed with gastational
                   diabetes?
                 </label>
                 <div className="flex-col space-x-4">
-                  <label className="inline-flex items-center" htmlFor="gastational-diabetes-yes">
+                  <label className="inline-flex items-center" htmlFor="gastational-diabetes-yes" aria-label='yes'>
                     <input
                       id="gastational-diabetes-yes"
                       type="radio"
@@ -177,7 +176,7 @@ export default function Home() {
                     />
                     <span className="ml-2 text-gray-700">yes</span>
                   </label>
-                  <label className="inline-flex items-center mt-3" htmlFor="gastational-diabetes-no">
+                  <label className="inline-flex items-center mt-3" htmlFor="gastational-diabetes-no" aria-label='no'>
                     <input
                       id="gastational-diabetes-no"
                       type="radio"
@@ -196,11 +195,11 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col">
-                <label className="inline-flex items-center font-medium" htmlFor="family">
+                <label className="inline-flex items-center font-medium" htmlFor="family" tabIndex={0} aria-label='Do you have a mother, father, sister, brother, with diabetes?'>
                   Do you have a mother, father, sister, brother, with diabetes?
                 </label>
                 <div className="flex-col space-x-4">
-                  <label className="inline-flex items-center" htmlFor="family-yes">
+                  <label className="inline-flex items-center" htmlFor="family-yes" aria-label='yes'>
                     <input
                       id="family-yes"
                       type="radio"
@@ -215,7 +214,7 @@ export default function Home() {
                     />
                     <span className="ml-2 text-gray-700">yes</span>
                   </label>
-                  <label className="inline-flex items-center mt-3" htmlFor="family-no">
+                  <label className="inline-flex items-center mt-3" htmlFor="family-no" aria-label='no'>
                     <input
                       id="family-no"
                       type="radio"
@@ -234,11 +233,11 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col">
-                <label className="inline-flex items-center font-medium" htmlFor="high-blood-pressure">
+                <label className="inline-flex items-center font-medium" htmlFor="high-blood-pressure" tabIndex={0} aria-label='Have you been diagnosed with high blood pressure?'>
                   Have you been diagnosed with high blood pressure?
                 </label>
                 <div className="flex-col space-x-4">
-                  <label className="inline-flex items-center" htmlFor="high-blood-pressure-yes">
+                  <label className="inline-flex items-center" htmlFor="high-blood-pressure-yes" aria-label='yes'>
                     <input
                       id="high-blood-pressure-yes"
                       type="radio"
@@ -253,7 +252,7 @@ export default function Home() {
                     />
                     <span className="ml-2 text-gray-700">yes</span>
                   </label>
-                  <label className="inline-flex items-center mt-3" htmlFor="high-blood-pressure-no">
+                  <label className="inline-flex items-center mt-3" htmlFor="high-blood-pressure-no" aria-label='no'>
                     <input
                       id="high-blood-pressure-no"
                       type="radio"
@@ -272,11 +271,11 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col">
-                <label className="inline-flex items-center font-medium" htmlFor="active">
+                <label className="inline-flex items-center font-medium" htmlFor="active" tabIndex={0} aria-label='Are you physically active?'>
                   Are you physically active?
                 </label>
                 <div className="flex-col space-x-4">
-                  <label className="inline-flex items-center" htmlFor="active-yes">
+                  <label className="inline-flex items-center" htmlFor="active-yes" aria-label='yes'>
                     <input
                       id="active-yes"
                       type="radio"
@@ -291,7 +290,7 @@ export default function Home() {
                     />
                     <span className="ml-2 text-gray-700">yes</span>
                   </label>
-                  <label className="inline-flex items-center mt-3" htmlFor="active-no">
+                  <label className="inline-flex items-center mt-3" htmlFor="active-no" aria-label='no'>
                     <input
                       id="active-no"
                       type="radio"
@@ -319,3 +318,5 @@ export default function Home() {
     </main>
   )
 }
+
+export default Home;
